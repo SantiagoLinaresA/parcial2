@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div>
+    <br />
+
+    <div class="selected-parte rounded" *ngIf="selected">
+      <app-parte-detail [parteDetail]="selectedParte" ></app-parte-detail>
+    </div>
+
+    <br />
+
+    <div class="row">
+
+      <div
+        *ngFor="
+          let parte of partes
+        "
+        class="col mb-2"
+      >
+        <div class="card p-2" (click)="onSelected(parte)" style="width: 37rem; height: 6rem">
+          <div class="card-body">
+            <a routerLink="/restaurantes/{{ restaurante.id }}" class="card-title">{{ restaurante.nombre }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

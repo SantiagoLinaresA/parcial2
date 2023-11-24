@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ restauranteDetail.nombre }}</p>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt>pais</dt>
+        <dd>{{ restauranteDetail.pais }}</dd>
+        
+        <dt>Marca</dt>
+        <dd>{{ parteDetail.marca }}</dd>
+        
+        <dt>Caracteristicas</dt>
+        <dd>{{ parteDetail.caracteristicas }}</dd>
+        
+        <dt>Precio</dt>
+        <dd>{{ parteDetail.precio }}</dd>
+        
+        <dt>Imagenes</dt>
+        <dd>
+          <dl>
+            <dd class="caption" *ngFor="let imagen of parteDetail.imagenes">
+              <a target="_blank"   routerLink="./imagenes/{{ imagen.id }}">
+                <img
+                 class="card-img-top"
+                 src="{{ imagen.ruta }}"
+                 alt="{{ imagen.ruta }}"
+               />
+              </a>
+            </dd>
+          </dl>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
